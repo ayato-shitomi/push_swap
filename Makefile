@@ -36,9 +36,11 @@ SRCS	=	srcs/add_state.c \
 all			:	$(NAME)
 
 $(NAME)	:	$(SRCS)
+	clear
 	$(CC) $(CFLAGS) $(CI) $(SRCS) $(DBG) -o $(NAME)
 
 clean		:
+	clear
 	$(RM)
 
 fclean		:	clean

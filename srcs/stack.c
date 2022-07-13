@@ -30,6 +30,8 @@ int	fill_stack_arg(char *arg, t_stack *stack, size_t *stack_nb)
 	int		num;
 	char	*str;
 
+	if (!arg)
+		return (0);
 	while (*arg)
 	{
 		while (*arg && *arg == ' ')
