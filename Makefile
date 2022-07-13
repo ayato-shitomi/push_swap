@@ -48,4 +48,12 @@ fclean		:	clean
 
 re			:	fclean all
 
+test		:	re
+	./push_swap 1
+	./push_swap 0
+	./push_swap 2 3 1
+	./push_swap 2 3 1 5 4 0
+	./push_swap 7834 5 72 63 954 97 824 1
+	./push_swap 4 64 26 32 44 60 3 12 87 10 34 81 91 52 61 40 69 79 1 73 6
+
 .PHONY		:	all clean fclean re

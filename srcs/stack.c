@@ -25,6 +25,12 @@ int	stack_contains(t_stack *stack, int num)
 	return (0);
 }
 
+static int	free_str_return_one(char *str)
+{
+	free(str);
+	return (1);
+}
+
 int	fill_stack_arg(char *arg, t_stack *stack, size_t *stack_nb)
 {
 	int		num;
@@ -40,10 +46,7 @@ int	fill_stack_arg(char *arg, t_stack *stack, size_t *stack_nb)
 			break ;
 		str = ft_strdup_char(arg, ' ');
 		if (ft_atoi_pushswap(str, &num))
-		{
-			free(str);
-			return (1);
-		}
+			return (free_str_return_one(str));
 		free(str);
 		if (stack_contains(stack, num))
 			return (1);

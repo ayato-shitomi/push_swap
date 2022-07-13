@@ -34,6 +34,7 @@ static void	print_header(void)
 
 int	usage(void)
 {
+	ft_putstr_fd("Error\n", 1);
 	print_header();
 	ft_putstr_fd("Usage:\n", 1);
 	ft_putstr_fd("	./push_swap <numbers which you want to sort>\n", 1);

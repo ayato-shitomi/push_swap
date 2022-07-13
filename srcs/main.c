@@ -10,40 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	We can only use these functions：
-		read, write, malloc, free, exit
-
-	sa	swap a
-			swap the first 2 elements at the top of stack_a.
-	sb	swap b
-			swap the first 2 elements at the top of stack_b.
-	ss	sa and sb
-			do `sa` and `sb` at the same time.
-	pa	push a
-			take the first element at the top of stack_b
-			and put it at the top of stack_a.
-	pb	push b
-			take the first element at the top of stack_a
-			and put it at the top of stacl_b.
-	ra	rotate a
-			shift up all elements of stack_a by 1.
-			The first element becomes the last one.
-	rb	rotate b
-			shift up all elements of stack_b by 1.
-			The first element becomes the last one.
-	rr	ra and rb
-			do `ra` and `rb` at the same time.
-	rra	reverse rotate a
-			shift down all elements of stack_a by 1.
-			The last element becomes the first one.
-	rrb	reverse rotate b
-			shift down all elements of stack_b by 1.
-			The last element becomes the first one.
-	rrr	rra and rrb
-			do `rra` and `rrb` at the same time.
-*/
-
 #include "../includes/push_swap.h"
 
 int	create_states_resolution(t_state **states)
@@ -150,19 +116,13 @@ int	realign_and_fill_a(t_program *prg)
 	return (0);
 }
 
-/*
-
-*/
-
 int	main(int ac, char **av)
 {
 	t_program	prg;
 	int			debug;
 
-	if (ac == 1)
+	if (ac == 2)
 		return (usage());
-	if (ac < 2)
-		return (0);
 	if (init_stacks(ac, &av[1], &prg.stack_a, &prg.stack_b))
 		return (1);
 	prg.instr = NULL;
