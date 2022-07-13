@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"libft.h": "c",
+			"philo.h": "c",
+			"*.tcc": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"stdexcept": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"system_error": "cpp",
+			"typeinfo": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"exception": "cpp",
+			"initializer_list": "cpp",
+			"iosfwd": "cpp",
+			"iostream": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"streambuf": "cpp",
+			"type_traits": "cpp"
+		}
+	}
+}
