@@ -110,7 +110,7 @@ stack_b	:
 ファイル階層は以下のとおりです。
 
 ```
-/home/ubuntu/42Tokyo/Lv2/push_swap
+/push_swap
 |--.git
 |
 |--includes
