@@ -105,6 +105,50 @@ stack_b	:
 
 ## 技術的解説
 
+### ファイル階層
+
+ファイル階層は以下のとおりです。
+
+```
+/home/ubuntu/42Tokyo/Lv2/push_swap
+|--.git
+|
+|--includes
+|  |--push_swap.h
+|
+|--Makefile
+|--README.md
+|
+|--srcs
+|  |--42Tokyo.code-workspace
+|  |--add_state.c
+|  |--align_stacks.c
+|  |--bruteforce.c
+|  |--bruteforce_pick_check.c
+|  |--free_something.c
+|  |--ft_bzero.c
+|  |--ft_calloc.c
+|  |--ft_memset.c
+|  |--ft_putstr_fd.c
+|  |--ft_strdup.c
+|  |--ft_strlen.c
+|  |--ft_strncmp.c
+|  |--instructions.c
+|  |--instructions_utils.c
+|  |--less_mvt.c
+|  |--main.c
+|  |--movement.c
+|  |--new_empty_state.c
+|  |--pushswap_utils.c
+|  |--resolve.c
+|  |--resolve_utils.c
+|  |--rotate.c
+|  |--stack.c
+|  |--stacks_utils.c
+|  |--stack_utils.c
+|  |--utils.c
+```
+
 ### アルゴリズムに関して
 
 アルゴリズム自体はあまり賢くありません。
