@@ -6,7 +6,7 @@
 /*   By: ashitomi<ashitomi@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:23:51 by ashitomi          #+#    #+#             */
-/*   Updated: 2022/05/21 20:23:51 by ashitomi         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:39:36 by ashitomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,24 +116,47 @@ int	realign_and_fill_a(t_program *prg)
 	return (0);
 }
 
+/*
+static void	put(t_program *prg)
+{
+	int	m = 0;
+	char *str;
+	write(1, "debug :", ft_strlen("debug :"));
+	while (m < (int)prg->stack_a.size)
+	{
+		str = ft_itoa(prg->stack_a.array[m]);
+		write(1, str, ft_strlen(str));
+		write(1, " ", 1);
+		free(str);
+		m++;
+	}
+	write(1, "\n\n", 2);
+}
+*/
+
 int	main(int ac, char **av)
 {
 	t_program	prg;
+	t_program	prg2;
 	int			debug;
 
-	if (ac == 2)
-		return (usage());
+	if (check_ac(ac))
+		return (write_err_ac(ac, av));
 	if (init_stacks(ac, &av[1], &prg.stack_a, &prg.stack_b))
 		return (1);
-	prg.instr = NULL;
+	instr_null(&prg);
+	if (is_stack_ordered(&prg.stack_a, ZERO) == 0)
+		return (free_prg(&prg));
 	debug = resolve(&prg);
 	if (is_stack_ordered(&prg.stack_a, ZERO) == 1 && debug == 1)
+		return (free_prg(&prg) + ft_put_err_return_one());
+	if (6 <= prg.stack_a.size && prg.stack_a.size < 100
+		&& is_stack_ordered(&prg.stack_a, ZERO) == 1)
 	{
-		free_instructions(prg.instr);
-		return (ft_put_err_return_one());
+		print_ins_and_some_and_free(&prg, debug);
+		if (init_stacks(ac, &av[1], &prg2.stack_a, &prg2.stack_b))
+			return (1);
+		return (second_resolve(&prg2) + free_prg(&prg2));
 	}
-	print_instructions(prg.instr);
-	free_prg(&prg);
-	print_some(debug);
-	return (0);
+	return (print_ins_and_some(&prg, debug) + free_prg(&prg));
 }

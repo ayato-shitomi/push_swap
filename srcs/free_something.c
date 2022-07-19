@@ -6,13 +6,13 @@
 /*   By: ashitomi<ashitomi@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 20:23:51 by ashitomi          #+#    #+#             */
-/*   Updated: 2022/05/21 20:23:51 by ashitomi         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:39:36 by ashitomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_instructions(t_instruction *instructions)
+int	free_instructions(t_instruction *instructions)
 {
 	t_instruction	*next;
 
@@ -23,6 +23,7 @@ void	free_instructions(t_instruction *instructions)
 		free(instructions);
 		instructions = next;
 	}
+	return (1);
 }
 
 void	free_stack(t_stack *stack)
@@ -48,9 +49,10 @@ void	free_states(t_state *states)
 	}
 }
 
-void	free_prg(t_program *prg)
+int	free_prg(t_program *prg)
 {
 	free_instructions(prg->instr);
 	free(prg->stack_a.array);
 	free(prg->stack_b.array);
+	return (0);
 }

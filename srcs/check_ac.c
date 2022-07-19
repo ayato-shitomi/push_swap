@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   check_ac.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashitomi<ashitomi@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 23:40:34 by ashitomi          #+#    #+#             */
+/*   Created: 2022/07/19 11:39:36 by ashitomi          #+#    #+#             */
 /*   Updated: 2022/07/19 11:39:36 by ashitomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	check_ac(int ac)
 {
-	void	*result;
+	if (ac == 2 || ac == 1)
+		return (1);
+	else
+		return (0);
+}
 
-	if (count == 0 || size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	result = malloc(count * size);
-	if (!result)
-		return (result);
-	ft_bzero(result, count * size);
-	return (result);
+int	write_err_ac(int ac, char **av)
+{
+	if (ac == 2 && (av[1][0] == 'h' || (av[1][0] == '-' && av[1][1] == 'h')))
+		return (usage());
+	return (0);
 }

@@ -71,10 +71,10 @@ int					ft_strcmp(const char *s1, const char *s2);
 void				print_some(int	debug);
 
 // free_something.c
-void				free_instructions(t_instruction *instructions);
+int					free_instructions(t_instruction *instructions);
 void				free_stack(t_stack *stack);
 void				free_states(t_state *states);
-void				free_prg(t_program *prg);
+int					free_prg(t_program *prg);
 
 // rotate.c
 void				rotate_stack(t_stack *stack);
@@ -176,6 +176,21 @@ int					if_do_rra(t_program *prg);
 int					if_do_rra_two(t_program *prg);
 int					resolve_return(t_program *prg);
 
+// second_resolve.c
+int					second_resolve(t_program *prg);
+int					print_ins_and_some(t_program *prg, int debug);
+void				print_ins_and_some_and_free(t_program *prg, int debug);
+int					instr_null(t_program *prg);
+
+// second_resolv_utils.c
+void				print_pbrb(void);
+int					print_pb_rb_with_num(int i);
+int					print_pa_ra_with_num(int i);
+
+// check_ac.c
+int					check_ac(int ac);
+int					write_err_ac(int ac, char **av);
+
 // other libft
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlen(const char *s);
@@ -184,5 +199,6 @@ void				*ft_memset(void *dst, int c, size_t n);
 char				*ft_strdup(const char *str);
 void				*ft_calloc(size_t count, size_t size);
 void				ft_bzero(void *s, size_t n);
+char				*ft_itoa(int n);
 
 #endif

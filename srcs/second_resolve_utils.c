@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   second_resolve_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashitomi<ashitomi@student.42tokyo.jp>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 23:40:34 by ashitomi          #+#    #+#             */
+/*   Created: 2022/07/19 11:39:36 by ashitomi          #+#    #+#             */
 /*   Updated: 2022/07/19 11:39:36 by ashitomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	print_pbrb(void)
 {
-	void	*result;
+	write(1, "pb\n", 3);
+	write(1, "rb\n", 3);
+}
 
-	if (count == 0 || size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	result = malloc(count * size);
-	if (!result)
-		return (result);
-	ft_bzero(result, count * size);
-	return (result);
+int	print_pb_rb_with_num(int i)
+{
+	write(1, "pb\n", 3);
+	if (i != 0)
+		write(1, "rb\n", 3);
+	return (i + 1);
+}
+
+int	print_pa_ra_with_num(int i)
+{
+	write(1, "pa\n", 3);
+	if (i != 0)
+		write(1, "ra\n", 3);
+	return (i + 1);
 }

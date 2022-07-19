@@ -10,9 +10,11 @@ SRCS	=	srcs/add_state.c \
 			srcs/align_stacks.c \
 			srcs/bruteforce.c \
 			srcs/bruteforce_pick_check.c \
+			srcs/check_ac.c \
 			srcs/free_something.c \
 			srcs/ft_bzero.c \
 			srcs/ft_calloc.c \
+			srcs/ft_itoa.c \
 			srcs/ft_memset.c \
 			srcs/ft_strdup.c \
 			srcs/ft_putstr_fd.c \
@@ -28,6 +30,8 @@ SRCS	=	srcs/add_state.c \
 			srcs/resolve.c \
 			srcs/resolve_utils.c \
 			srcs/rotate.c \
+			srcs/second_resolve_utils.c \
+			srcs/second_resolve.c \
 			srcs/stack.c \
 			srcs/stacks_utils.c \
 			srcs/stack_utils.c \
